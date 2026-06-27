@@ -1,16 +1,16 @@
-# React + Vite
+# Hi, I'm Devika Polavarapu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my portfolio! I'm glad you're here.
 
-Currently, two official plugins are available:
+I'm an Information Technology student passionate about Software Engineering, Artificial Intelligence, Full Stack Development, and building impactful digital solutions. I enjoy turning ideas into real-world applications while continuously learning, exploring new technologies, and contributing to meaningful projects.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This portfolio showcases my journey through internships, projects, certifications, leadership experiences, and the technical skills I've developed along the way.
 
-## React Compiler
+### 💻 Tech Stack
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="18" valign="middle"> React
+- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" width="18" valign="middle"> Vite
+- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" width="18" valign="middle"> Tailwind CSS
+- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="18" valign="middle"> JavaScript
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Thanks for stopping by! ✨
