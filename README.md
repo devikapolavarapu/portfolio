@@ -14,3 +14,5 @@ This portfolio showcases my journey through internships, projects, certification
 - <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="18" valign="middle"> JavaScript
 
 Thanks for stopping by! ✨
+
+#### Link to my Portfolio : https://devika-polavarapu.is-a.dev
