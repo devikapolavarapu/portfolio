@@ -116,12 +116,20 @@ export default function Contact() {
                 <button
                   onClick={() => setIsModalOpen(true)}
                   aria-label="View profile photo"
-                  className="w-32 h-32 md:w-36 md:h-36 object-cover rounded-full cursor-pointer hover:scale-105 hover:brightness-110 active:scale-95 transition-all duration-300 outline-none focus:ring-2 focus:ring-amber-500/50 flex items-center justify-center p-0 border-none bg-transparent"
+                  style={{
+                    background: 'transparent',
+                    padding: 0,
+                    border: 'none',
+                    borderRadius: '50%',
+                    boxShadow: 'none',
+                    display: 'block'
+                  }}
+                  className="cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 outline-none focus:ring-2 focus:ring-amber-500/50"
                 >
                   <img
                     src="/profile.jpg"
                     alt="Devika Polavarapu"
-                    className="w-full h-full object-cover rounded-full"
+                    className="w-32 h-32 md:w-36 md:h-36 object-cover rounded-full ring-2 ring-amber-400/20"
                   />
                 </button>
               </div>
@@ -507,7 +515,19 @@ export default function Contact() {
         <button
           onClick={() => setIsModalOpen(false)}
           aria-label="Close profile photo"
-          className="absolute top-6 right-6 text-white hover:text-amber-500 hover:scale-110 active:scale-95 transition-all duration-300 text-3xl font-semibold bg-zinc-900/40 w-12 h-12 flex items-center justify-center rounded-full cursor-pointer z-50"
+          style={{
+            background: 'rgba(24, 24, 27, 0.4)',
+            padding: 0,
+            border: 'none',
+            borderRadius: '50%',
+            boxShadow: 'none',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '48px',
+            height: '48px'
+          }}
+          className="absolute top-6 right-6 text-white hover:text-amber-500 hover:scale-110 active:scale-95 transition-all duration-300 text-3xl font-semibold cursor-pointer z-50"
         >
           &times;
         </button>
