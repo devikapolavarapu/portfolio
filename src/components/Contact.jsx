@@ -129,7 +129,7 @@ export default function Contact() {
                   <img
                     src="/profile.jpg"
                     alt="Devika Polavarapu"
-                    className="w-32 h-32 md:w-36 md:h-36 object-cover rounded-full ring-2 ring-amber-400/20"
+                    className="w-36 h-36 md:w-44 md:h-44 object-cover rounded-full ring-2 ring-amber-400/20"
                   />
                 </button>
               </div>
