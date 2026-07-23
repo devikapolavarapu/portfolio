@@ -240,7 +240,7 @@ export default function Contact() {
                 : "opacity-0 translate-y-[-30px] scale-95 pointer-events-none absolute"
             }`}
           >
-            <div className="max-w-[240px] md:max-w-[330px] mb-8 p-1 bg-gradient-to-r from-amber-500/20 to-orange-400/20 rounded-2xl border border-amber-500/20 shadow-2xl">
+            <div className="max-w-[200px] md:max-w-[280px] mb-8 p-1 bg-gradient-to-r from-amber-500/20 to-orange-400/20 rounded-2xl border border-amber-500/20 shadow-2xl">
               <img
                 src="/illustration.jpg"
                 alt="Contact Illustration"
