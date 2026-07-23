@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { FaEnvelope, FaGithub, FaLinkedin, FaDiscord, FaFileAlt, FaPhone } from "react-icons/fa"
 
 export default function Contact() {
@@ -9,6 +9,29 @@ export default function Contact() {
     error: false,
   })
   const [message, setMessage] = useState("")
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  useEffect(() => {
+    if (!isModalOpen) return
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setIsModalOpen(false)
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [isModalOpen])
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
+    }
+    return () => {
+      document.body.style.overflow = "unset"
+    }
+  }, [isModalOpen])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -90,11 +113,17 @@ export default function Contact() {
             {/* Profile Photo (Center attraction) */}
             <div className="relative z-10 p-1.5 rounded-full bg-gradient-to-r from-amber-500 via-orange-400 to-amber-600 shadow-[0_0_50px_rgba(245,158,11,0.5)] animate-float-portrait">
               <div className="p-1 rounded-full bg-zinc-950">
-                <img
-                  src="/profile.jpg"
-                  alt="Devika Polavarapu"
-                  className="w-32 h-32 md:w-36 md:h-36 object-cover rounded-full ring-2 ring-amber-400/20"
-                />
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  aria-label="View profile photo"
+                  className="w-32 h-32 md:w-36 md:h-36 object-cover rounded-full cursor-pointer hover:scale-105 hover:brightness-110 active:scale-95 transition-all duration-300 outline-none focus:ring-2 focus:ring-amber-500/50 flex items-center justify-center p-0 border-none bg-transparent"
+                >
+                  <img
+                    src="/profile.jpg"
+                    alt="Devika Polavarapu"
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </button>
               </div>
             </div>
 
@@ -464,6 +493,37 @@ export default function Contact() {
               </button>
             </form>
           </div>
+        </div>
+      </div>
+
+      {/* Lightbox / Modal */}
+      <div
+        className={`fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md transition-opacity duration-300 ${
+          isModalOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setIsModalOpen(false)}
+      >
+        {/* Close button inside modal (X) */}
+        <button
+          onClick={() => setIsModalOpen(false)}
+          aria-label="Close profile photo"
+          className="absolute top-6 right-6 text-white hover:text-amber-500 hover:scale-110 active:scale-95 transition-all duration-300 text-3xl font-semibold bg-zinc-900/40 w-12 h-12 flex items-center justify-center rounded-full cursor-pointer z-50"
+        >
+          &times;
+        </button>
+
+        {/* Large Image Container */}
+        <div
+          className={`relative p-2 max-w-[80vw] lg:max-w-[650px] w-full max-h-[85vh] flex items-center justify-center transition-all duration-300 transform ${
+            isModalOpen ? "scale-100 opacity-100" : "scale-75 opacity-0"
+          }`}
+          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image itself
+        >
+          <img
+            src="/profile.jpg"
+            alt="Devika Polavarapu Expanded Profile"
+            className="w-full h-full max-w-[80vw] lg:max-w-[650px] max-h-[85vh] object-contain rounded-2xl border border-amber-500/20 shadow-[0_0_50px_rgba(245,158,11,0.25)]"
+          />
         </div>
       </div>
     </section>
