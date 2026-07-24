@@ -242,13 +242,55 @@ export default function Contact() {
           >
             <div
               style={{ marginBottom: '24px' }}
-              className="max-w-[170px] md:max-w-[230px] p-1 bg-gradient-to-r from-amber-500/20 to-orange-400/20 rounded-2xl border border-amber-500/20 shadow-2xl"
+              className="max-w-[170px] md:max-w-[230px] p-2 bg-zinc-950/30 rounded-2xl border border-amber-500/20 shadow-[0_0_30px_rgba(245,158,11,0.05)]"
             >
-              <img
-                src="/illustration.jpg"
-                alt="Contact Illustration"
-                className="w-full h-auto rounded-xl object-contain"
-              />
+              <svg
+                viewBox="0 0 200 200"
+                className="w-full h-auto object-contain filter drop-shadow-[0_0_6px_rgba(251,146,60,0.65)] drop-shadow-[0_0_15px_rgba(249,115,22,0.3)]"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                {/* Planet (Top-Left) */}
+                <circle cx="45" cy="45" r="14" stroke="#FB923C" strokeWidth="2" />
+                <path d="M 22 49 C 28 58, 62 58, 68 49 M 64 41 C 60 38, 30 38, 26 41" stroke="#FDBA74" strokeWidth="2" />
+
+                {/* Cloud (Top-Right) */}
+                <path d="M 145 45 C 141 45, 135 39, 138 31 C 135 24, 144 18, 150 21 C 153 15, 165 15, 168 23 C 174 23, 177 28, 174 34 C 177 39, 171 45, 162 45 Z" stroke="#FB923C" strokeWidth="1.5" />
+
+                {/* Envelope (Center, Tilted) */}
+                <g transform="translate(50, 68) rotate(-8)">
+                  <rect x="0" y="0" width="90" height="58" rx="6" stroke="#FB923C" strokeWidth="2.2" />
+                  <path d="M 0 0 L 45 32 L 90 0" stroke="#FB923C" strokeWidth="2" />
+                  <path d="M 0 58 L 38 30" stroke="#FB923C" strokeWidth="1.8" strokeOpacity="0.8" />
+                  <path d="M 90 58 L 52 30" stroke="#FB923C" strokeWidth="1.8" strokeOpacity="0.8" />
+                  {/* Glowing heart seal */}
+                  <path d="M 45 34 C 45 34, 41 29, 37 32 C 33 36, 45 44, 45 44 C 45 44, 57 36, 53 32 C 49 29, 45 34, 45 34" stroke="#FDBA74" strokeWidth="1.8" fill="#FB923C" fillOpacity="0.1" />
+                </g>
+
+                {/* Cloud (Bottom-Left) */}
+                <path d="M 25 155 C 20 155, 12 147, 16 137 C 12 128, 24 120, 32 124 C 36 116, 52 116, 56 126 C 64 126, 68 132, 64 140 C 68 147, 60 155, 48 155 Z" stroke="#FB923C" strokeWidth="2" />
+
+                {/* Vine & Leaves (Right) */}
+                <path d="M 170 180 C 160 145, 165 110, 150 85" stroke="#FB923C" strokeWidth="2" />
+                {/* Leaves */}
+                <path d="M 166 140 C 158 138, 152 144, 158 148 C 166 150, 168 144, 166 140 Z" stroke="#FDBA74" strokeWidth="1.5" />
+                <path d="M 164 115 C 172 113, 176 119, 170 123 C 164 125, 162 120, 164 115 Z" stroke="#FDBA74" strokeWidth="1.5" />
+
+                {/* Tulip Flower (Left) */}
+                <path d="M 25 180 Q 30 160 38 145" stroke="#FB923C" strokeWidth="1.5" />
+                <path d="M 38 145 C 34 141, 32 133, 38 129 C 40 133, 42 129, 44 129 C 50 133, 48 141, 44 145 Z" stroke="#FDBA74" strokeWidth="1.5" />
+
+                {/* Sparkles */}
+                <path d="M 105 35 L 107 31 L 109 35 L 113 37 L 109 39 L 107 43 L 105 39 L 101 37 Z" stroke="#FDBA74" strokeWidth="1.5" />
+                <path d="M 95 145 L 97 141 L 99 145 L 103 147 L 99 149 L 97 153 L 95 149 L 91 147 Z" stroke="#FDBA74" strokeWidth="1.5" />
+                <path d="M 145 130 L 146.5 126 L 148 130 L 152 131.5 L 148 133 L 146.5 137 L 145 133 L 141 131.5 Z" stroke="#FDBA74" strokeWidth="1.2" />
+
+                {/* Tiny dots */}
+                <circle cx="85" cy="55" r="1" fill="#FDBA74" />
+                <circle cx="120" cy="120" r="0.8" fill="#FDBA74" />
+                <circle cx="55" cy="90" r="0.8" fill="#FDBA74" />
+              </svg>
             </div>
             <h3 className="text-2xl font-bold text-white mb-3">Want to send me a message?</h3>
             <p className="text-zinc-400 text-sm max-w-sm leading-relaxed mb-0">
