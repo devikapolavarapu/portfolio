@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { FaEnvelope, FaGithub, FaLinkedin, FaDiscord, FaFileAlt, FaPhone } from "react-icons/fa"
+import { FaEnvelope, FaGithub, FaLinkedin, FaDiscord, FaFileAlt, FaPhone, FaUser, FaEdit, FaCommentAlt, FaPaperPlane, FaArrowLeft } from "react-icons/fa"
 
 export default function Contact() {
   const [showForm, setShowForm] = useState(false)
@@ -376,216 +376,158 @@ export default function Contact() {
 
           {/* Card 2: Contact Form (Active State) */}
           <div
-            className={`w-full transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)] ${
-              showForm
-                ? "opacity-100 translate-y-0 scale-100 relative z-10"
-                : "opacity-0 translate-y-20 scale-95 pointer-events-none absolute"
-            }`}
+            className="w-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+            style={{
+              perspective: '1000px',
+              transformStyle: 'preserve-3d',
+              transform: showForm 
+                ? 'translateY(0) scale(1) rotateX(0deg)' 
+                : 'translateY(30px) scale(0.94) rotateX(10deg)',
+              opacity: showForm ? 1 : 0,
+              pointerEvents: showForm ? 'auto' : 'none',
+              position: showForm ? 'relative' : 'absolute',
+              width: '100%'
+            }}
           >
-            {/* Back Button */}
-            <button
-              onClick={() => setShowForm(false)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-950/30 border border-amber-500/30 text-amber-300 hover:text-white hover:bg-amber-900/40 hover:border-amber-400 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(245,158,11,.35)] mb-8"
+            {/* Form Container Panel */}
+            <div 
+              className="relative p-6 md:p-8 bg-[#0b0618]/70 border border-orange-500/30 rounded-3xl shadow-[0_0_40px_rgba(251,146,60,0.08)] backdrop-blur-xl overflow-hidden"
             >
-              &larr; Back
-            </button>
+              {/* Sparkles decoration inside form */}
+              <div className="absolute top-4 right-4 text-orange-500/20 text-sm">&#x2728;</div>
+              <div className="absolute bottom-4 left-4 text-orange-500/20 text-sm">&#x2728;</div>
 
-            {status.submitted && (
-              <div className="p-4 bg-green-500/10 border border-green-500/20 text-green-400 text-sm rounded-xl mb-6 flex items-center gap-3 backdrop-blur-sm">
-                <span className="text-lg">✓</span>
-                <span>{message}</span>
-              </div>
-            )}
-            {status.error && (
-              <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 text-sm rounded-xl mb-6 flex items-center gap-3 backdrop-blur-sm">
-                <span className="text-lg">⚠️</span>
-                <span>{message}</span>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="relative">
-                <input
-                  id="contact-name"
-                  type="text"
-                  name="name"
-                  placeholder=" "
-                  required
-                  className="block w-full px-5 pt-7 pb-3 bg-zinc-900/70 border border-zinc-800 hover:border-amber-500/40 rounded-2xl text-white placeholder-transparent focus:outline-none focus:ring-4 focus:ring-amber-500/20 focus:border-amber-500 transition-all duration-300 backdrop-blur-xl peer"
-                />
-                <label
-                  htmlFor="contact-name"
-                  className="
-                    absolute
-                    left-5
-                    top-5
-                    text-sm
-                    text-zinc-400
-                    pointer-events-none
-                    origin-left
-                    bg-[#0b0618]
-                    px-2
-                    rounded
-                    transition-all
-                    duration-300
-
-                    peer-placeholder-shown:translate-y-0
-                    peer-placeholder-shown:scale-100
-
-                    peer-focus:-translate-y-6
-                    peer-focus:scale-75
-                    peer-focus:text-amber-400
-
-                    peer-[:not(:placeholder-shown)]:-translate-y-6
-                    peer-[:not(:placeholder-shown)]:scale-75
-                    peer-[:not(:placeholder-shown)]:text-amber-400
-                  "
+              {/* Back Button */}
+              <div className={`transition-all duration-500 delay-[50ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                <button
+                  type="button"
+                  onClick={() => setShowForm(false)}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-950/20 border border-orange-500/20 text-orange-300 hover:text-white hover:border-orange-400 hover:bg-orange-500/10 transition-all duration-300 hover:-translate-x-1 hover:shadow-[0_0_15px_rgba(251,146,60,0.15)] mb-6 text-xs font-semibold"
                 >
-                  Name
-                </label>
+                  <FaArrowLeft className="text-2xs" /> Back
+                </button>
               </div>
 
-              <div className="relative">
-                <input
-                  id="contact-email"
-                  type="email"
-                  name="email"
-                  placeholder=" "
-                  required
-                  className="block w-full px-5 pt-7 pb-3 bg-zinc-900/70 border border-zinc-800 hover:border-amber-500/40 rounded-2xl text-white placeholder-transparent focus:outline-none focus:ring-4 focus:ring-amber-500/20 focus:border-amber-500 transition-all duration-300 backdrop-blur-xl peer"
-                />
-                <label
-                  htmlFor="contact-email"
-                  className="
-                    absolute
-                    left-5
-                    top-5
-                    text-sm
-                    text-zinc-400
-                    pointer-events-none
-                    origin-left
-                    bg-[#0b0618]
-                    px-2
-                    rounded
-                    transition-all
-                    duration-300
-
-                    peer-placeholder-shown:translate-y-0
-                    peer-placeholder-shown:scale-100
-
-                    peer-focus:-translate-y-6
-                    peer-focus:scale-75
-                    peer-focus:text-amber-400
-
-                    peer-[:not(:placeholder-shown)]:-translate-y-6
-                    peer-[:not(:placeholder-shown)]:scale-75
-                    peer-[:not(:placeholder-shown)]:text-amber-400
-                  "
-                >
-                  Email
-                </label>
+              {/* Compact Header */}
+              <div className={`mb-6 transition-all duration-500 delay-[100ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                <h3 className="text-lg font-bold text-white">Send me a message</h3>
+                <p className="text-xs text-zinc-400">Let's connect — I'd love to hear from you.</p>
               </div>
 
-              <div className="relative">
-                <input
-                  id="contact-subject"
-                  type="text"
-                  name="subject"
-                  placeholder=" "
-                  required
-                  className="block w-full px-5 pt-7 pb-3 bg-zinc-900/70 border border-zinc-800 hover:border-amber-500/40 rounded-2xl text-white placeholder-transparent focus:outline-none focus:ring-4 focus:ring-amber-500/20 focus:border-amber-500 transition-all duration-300 backdrop-blur-xl peer"
-                />
-                <label
-                  htmlFor="contact-subject"
-                  className="
-                    absolute
-                    left-5
-                    top-5
-                    text-sm
-                    text-zinc-400
-                    pointer-events-none
-                    origin-left
-                    bg-[#0b0618]
-                    px-2
-                    rounded
-                    transition-all
-                    duration-300
+              {status.submitted && (
+                <div className="p-4 bg-green-500/10 border border-green-500/20 text-green-400 text-sm rounded-xl mb-6 flex items-center gap-3 backdrop-blur-sm">
+                  <span className="text-lg">✓</span>
+                  <span>{message}</span>
+                </div>
+              )}
+              {status.error && (
+                <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 text-sm rounded-xl mb-6 flex items-center gap-3 backdrop-blur-sm">
+                  <span className="text-lg">⚠️</span>
+                  <span>{message}</span>
+                </div>
+              )}
 
-                    peer-placeholder-shown:translate-y-0
-                    peer-placeholder-shown:scale-100
+              <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Name field */}
+                <div className={`relative transition-all duration-500 delay-[150ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    name="name"
+                    placeholder=" "
+                    required
+                    className="block w-full pl-11 pr-5 pt-7 pb-2 bg-zinc-950/40 border border-zinc-800 hover:border-orange-500/25 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_12px_rgba(251,146,60,0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-300 peer"
+                  />
+                  <FaUser className="absolute left-4 top-[24px] text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-300 text-sm" />
+                  <label
+                    htmlFor="contact-name"
+                    className="absolute left-11 top-[20px] text-sm text-zinc-500 pointer-events-none transition-all duration-300 origin-left peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-[#FB923C] peer-[:not(:placeholder-shown)]:left-4 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FB923C]"
+                  >
+                    Name
+                  </label>
+                </div>
 
-                    peer-focus:-translate-y-6
-                    peer-focus:scale-75
-                    peer-focus:text-amber-400
+                {/* Email field */}
+                <div className={`relative transition-all duration-500 delay-[200ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    name="email"
+                    placeholder=" "
+                    required
+                    className="block w-full pl-11 pr-5 pt-7 pb-2 bg-zinc-950/40 border border-zinc-800 hover:border-orange-500/25 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_12px_rgba(251,146,60,0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-300 peer"
+                  />
+                  <FaEnvelope className="absolute left-4 top-[24px] text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-300 text-sm" />
+                  <label
+                    htmlFor="contact-email"
+                    className="absolute left-11 top-[20px] text-sm text-zinc-500 pointer-events-none transition-all duration-300 origin-left peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-[#FB923C] peer-[:not(:placeholder-shown)]:left-4 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FB923C]"
+                  >
+                    Email Address
+                  </label>
+                </div>
 
-                    peer-[:not(:placeholder-shown)]:-translate-y-6
-                    peer-[:not(:placeholder-shown)]:scale-75
-                    peer-[:not(:placeholder-shown)]:text-amber-400
-                  "
-                >
-                  Subject
-                </label>
-              </div>
+                {/* Subject field */}
+                <div className={`relative transition-all duration-500 delay-[250ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                  <input
+                    id="contact-subject"
+                    type="text"
+                    name="subject"
+                    placeholder=" "
+                    required
+                    className="block w-full pl-11 pr-5 pt-7 pb-2 bg-zinc-950/40 border border-zinc-800 hover:border-orange-500/25 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_12px_rgba(251,146,60,0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-300 peer"
+                  />
+                  <FaEdit className="absolute left-4 top-[24px] text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-300 text-sm" />
+                  <label
+                    htmlFor="contact-subject"
+                    className="absolute left-11 top-[20px] text-sm text-zinc-500 pointer-events-none transition-all duration-300 origin-left peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-[#FB923C] peer-[:not(:placeholder-shown)]:left-4 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FB923C]"
+                  >
+                    Subject
+                  </label>
+                </div>
 
-              <div className="relative">
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  placeholder=" "
-                  rows={6}
-                  required
-                  className="block w-full px-5 pt-7 pb-3 min-h-[180px] bg-zinc-900/70 border border-zinc-800 hover:border-amber-500/40 rounded-2xl text-white placeholder-transparent focus:outline-none focus:ring-4 focus:ring-amber-500/20 focus:border-amber-500 transition-all duration-300 backdrop-blur-xl peer resize-none"
-                />
-                <label
-                  htmlFor="contact-message"
-                  className="
-                    absolute
-                    left-5
-                    top-5
-                    text-sm
-                    text-zinc-400
-                    pointer-events-none
-                    origin-left
-                    bg-[#0b0618]
-                    px-2
-                    rounded
-                    transition-all
-                    duration-300
+                {/* Message field */}
+                <div className={`relative transition-all duration-500 delay-[300ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    placeholder=" "
+                    required
+                    className="block w-full pl-11 pr-5 pt-7 pb-2 min-h-[130px] max-h-[220px] resize-y bg-zinc-950/40 border border-zinc-800 hover:border-orange-500/25 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_12px_rgba(251,146,60,0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-300 peer"
+                  />
+                  <FaCommentAlt className="absolute left-4 top-5 text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-300 text-sm" />
+                  <label
+                    htmlFor="contact-message"
+                    className="absolute left-11 top-[16px] text-sm text-zinc-500 pointer-events-none transition-all duration-300 origin-left peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-[#FB923C] peer-[:not(:placeholder-shown)]:left-4 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FB923C]"
+                  >
+                    Message Details
+                  </label>
+                </div>
 
-                    peer-placeholder-shown:translate-y-0
-                    peer-placeholder-shown:scale-100
-
-                    peer-focus:-translate-y-6
-                    peer-focus:scale-75
-                    peer-focus:text-amber-400
-
-                    peer-[:not(:placeholder-shown)]:-translate-y-6
-                    peer-[:not(:placeholder-shown)]:scale-75
-                    peer-[:not(:placeholder-shown)]:text-amber-400
-                  "
-                >
-                  Message
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                disabled={status.submitting}
-                className="w-full h-14 rounded-2xl bg-gradient-to-r from-amber-600 via-orange-500 to-orange-500 text-white font-semibold tracking-wide transition-all duration-300 hover:-translate-y-1 active:scale-95 hover:shadow-[0_18px_40px_rgba(217,119,6,0.35)] hover:from-amber-500 hover:to-orange-400 disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2"
-              >
-                {status.submitting ? (
-                  <>
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Sending...
-                  </>
-                ) : (
-                  "Send Message"
-                )}
-              </button>
-            </form>
+                {/* Submit button */}
+                <div className={`pt-2 transition-all duration-500 delay-[350ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                  <button
+                    type="submit"
+                    disabled={status.submitting}
+                    className="w-full sm:w-[200px] h-12 mx-auto rounded-full bg-gradient-to-r from-[#FB923C] to-[#FDBA74] text-white font-semibold tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-[0_8px_20px_rgba(251,146,60,0.25)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2 cursor-pointer"
+                  >
+                    {status.submitting ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <span>Send Message</span>
+                        <FaPaperPlane className="text-xs" />
+                      </>
+                    )}
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
