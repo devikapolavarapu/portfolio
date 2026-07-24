@@ -10,6 +10,7 @@ export default function Contact() {
   })
   const [message, setMessage] = useState("")
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [hasOpened, setHasOpened] = useState(false)
 
   useEffect(() => {
     if (!isModalOpen) return
@@ -88,6 +89,40 @@ export default function Contact() {
         .animate-float-icon-slow {
           animation: float-icon-2 5s ease-in-out infinite;
         }
+        @keyframes royal-letter-open {
+          0% {
+            opacity: 0;
+            transform: scale(0.3) rotateX(65deg) translateY(60px);
+          }
+          65% {
+            opacity: 0.9;
+            transform: scale(1.02) rotateX(-5deg) translateY(-5px);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1) rotateX(0deg) translateY(0);
+          }
+        }
+        @keyframes royal-letter-close {
+          0% {
+            opacity: 1;
+            transform: scale(1) rotateX(0deg) translateY(0);
+          }
+          100% {
+            opacity: 0;
+            transform: scale(0.3) rotateX(65deg) translateY(60px);
+          }
+        }
+        .animate-royal-open {
+          animation: royal-letter-open 650ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
+          transform-origin: center center;
+          perspective: 1000px;
+        }
+        .animate-royal-close {
+          animation: royal-letter-close 550ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
+          transform-origin: center center;
+          perspective: 1000px;
+        }
       `}} />
 
       <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white">
@@ -114,7 +149,7 @@ export default function Contact() {
             <div className="relative z-10 p-1.5 rounded-full bg-gradient-to-r from-amber-500 via-orange-400 to-amber-600 shadow-[0_0_50px_rgba(245,158,11,0.5)] animate-float-portrait">
               <div className="p-1 rounded-full bg-zinc-950">
                 <button
-                  onClick={() => setIsModalOpen(true)}
+                  onClick={() => { setIsModalOpen(true); setHasOpened(true); }}
                   aria-label="View profile photo"
                   style={{
                     background: 'transparent',
@@ -130,6 +165,7 @@ export default function Contact() {
                     src="/profile.jpg"
                     alt="Devika Polavarapu"
                     className="w-36 h-36 md:w-44 md:h-44 object-cover rounded-full ring-2 ring-amber-400/20"
+                    style={{ objectPosition: 'center 18%' }}
                   />
                 </button>
               </div>
@@ -556,43 +592,59 @@ export default function Contact() {
 
       {/* Lightbox / Modal */}
       <div
-        className={`fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md transition-opacity duration-300 ${
+        className={`fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm transition-opacity duration-[500ms] ${
           isModalOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsModalOpen(false)}
       >
-        {/* Close button inside modal (X) */}
-        <button
-          onClick={() => setIsModalOpen(false)}
-          aria-label="Close profile photo"
-          style={{
-            background: 'rgba(24, 24, 27, 0.4)',
-            padding: 0,
-            border: 'none',
-            borderRadius: '50%',
-            boxShadow: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '48px',
-            height: '48px'
-          }}
-          className="absolute top-6 right-6 text-white hover:text-amber-500 hover:scale-110 active:scale-95 transition-all duration-300 text-3xl font-semibold cursor-pointer z-50"
-        >
-          &times;
-        </button>
-
-        {/* Large Image Container */}
+        {/* Large Image Container with Neon Frame */}
         <div
-          className={`relative p-2 max-w-[80vw] lg:max-w-[650px] w-full max-h-[85vh] flex items-center justify-center transition-all duration-300 transform ${
-            isModalOpen ? "scale-100 opacity-100" : "scale-75 opacity-0"
+          className={`relative max-w-[90vw] md:max-w-[480px] w-full max-h-[88vh] ${
+            isModalOpen 
+              ? "animate-royal-open" 
+              : hasOpened 
+                ? "animate-royal-close" 
+                : "opacity-0 scale-75"
           }`}
-          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image itself
+          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the frame itself
+          style={{
+            border: '2px solid #FB923C',
+            boxShadow: '0 0 6px rgba(251, 146, 60, 0.95), 0 0 16px rgba(249, 115, 22, 0.65), 0 0 35px rgba(249, 115, 22, 0.35)',
+            borderRadius: '16px',
+            backgroundColor: '#0c0a09', // dark backdrop matching card bg
+            overflow: 'hidden'
+          }}
         >
+          {/* Close button inside modal (X) near the top-right of the portrait frame */}
+          <button
+            onClick={() => setIsModalOpen(false)}
+            aria-label="Close profile photo"
+            style={{
+              background: 'rgba(12, 10, 9, 0.75)',
+              border: '1px solid rgba(251, 146, 60, 0.3)',
+              boxShadow: '0 0 8px rgba(251, 146, 60, 0.2)',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '36px',
+              height: '36px',
+              position: 'absolute',
+              top: '12px',
+              right: '12px',
+              cursor: 'pointer'
+            }}
+            className="text-[#FB923C] hover:text-[#F97316] hover:scale-105 active:scale-95 transition-all duration-300 text-2xl font-bold z-50"
+          >
+            &times;
+          </button>
+
+          {/* Opened image */}
           <img
             src="/profile.jpg"
             alt="Devika Polavarapu Expanded Profile"
-            className="w-full h-full max-w-[80vw] lg:max-w-[650px] max-h-[85vh] object-contain rounded-2xl border border-amber-500/20 shadow-[0_0_50px_rgba(245,158,11,0.25)]"
+            className="w-full h-auto max-h-[86vh] object-contain block rounded-2xl"
+            style={{ display: 'block' }}
           />
         </div>
       </div>
