@@ -382,7 +382,7 @@ export default function Contact() {
               transformStyle: 'preserve-3d',
               transform: showForm 
                 ? 'translateY(0) scale(1) rotateX(0deg)' 
-                : 'translateY(30px) scale(0.94) rotateX(10deg)',
+                : 'translateY(18px) scale(0.97) rotateX(8deg)',
               opacity: showForm ? 1 : 0,
               pointerEvents: showForm ? 'auto' : 'none',
               position: showForm ? 'relative' : 'absolute',
@@ -391,27 +391,53 @@ export default function Contact() {
           >
             {/* Form Container Panel */}
             <div 
-              className="relative p-6 md:p-8 bg-[#0b0618]/70 border border-orange-500/30 rounded-3xl shadow-[0_0_40px_rgba(251,146,60,0.08)] backdrop-blur-xl overflow-hidden"
+              className="relative p-6 md:p-8 bg-[#0b0618]/70 border border-orange-500/20 rounded-3xl shadow-[0_0_30px_rgba(251,146,60,0.06),inset_0_1px_1px_rgba(251,146,60,0.08)] backdrop-blur-xl overflow-hidden"
             >
               {/* Sparkles decoration inside form */}
-              <div className="absolute top-4 right-4 text-orange-500/20 text-sm">&#x2728;</div>
-              <div className="absolute bottom-4 left-4 text-orange-500/20 text-sm">&#x2728;</div>
+              <div className="absolute top-4 right-4 text-orange-500/25 text-sm">&#x2728;</div>
+              <div className="absolute bottom-4 right-4 text-orange-500/15 text-sm">&#x2728;</div>
+
+              {/* Envelope watermark in the bottom-right background */}
+              <svg 
+                className="absolute -bottom-2 -right-2 w-28 h-28 text-orange-500 pointer-events-none select-none opacity-[0.035]"
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="0.75"
+              >
+                <path d="M2 3h20v14H2z" />
+                <path d="M2 3l10 9 10-9" />
+              </svg>
 
               {/* Back Button */}
-              <div className={`transition-all duration-500 delay-[50ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+              <div className={`transition-all duration-500 delay-[60ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
                 <button
                   type="button"
                   onClick={() => setShowForm(false)}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-950/20 border border-orange-500/20 text-orange-300 hover:text-white hover:border-orange-400 hover:bg-orange-500/10 transition-all duration-300 hover:-translate-x-1 hover:shadow-[0_0_15px_rgba(251,146,60,0.15)] mb-6 text-xs font-semibold"
+                  style={{
+                    height: '42px',
+                    borderRadius: '9999px',
+                    paddingLeft: '16px',
+                    paddingRight: '16px',
+                    backgroundColor: 'rgba(15, 10, 25, 0.4)',
+                    border: '1px solid rgba(251, 146, 60, 0.2)',
+                    cursor: 'pointer',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px'
+                  }}
+                  className="group hover:bg-orange-500/10 hover:border-orange-500/40 hover:shadow-[0_0_12px_rgba(251,146,60,0.15)] hover:-translate-y-[1px] active:scale-95 transition-all duration-300 text-orange-400 text-xs font-semibold"
                 >
-                  <FaArrowLeft className="text-2xs" /> Back
+                  <FaArrowLeft className="text-2xs transition-transform duration-300 group-hover:-translate-x-[2px]" />
+                  <span>Back</span>
                 </button>
               </div>
 
               {/* Compact Header */}
-              <div className={`mb-6 transition-all duration-500 delay-[100ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
-                <h3 className="text-lg font-bold text-white">Send me a message</h3>
-                <p className="text-xs text-zinc-400">Let's connect — I'd love to hear from you.</p>
+              <div className={`mt-4 mb-5 transition-all duration-500 delay-[120ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">Send me a message</h3>
+                <p className="text-xs md:text-sm text-zinc-400 mt-1.5">Let's connect — I'd love to hear from you.</p>
               </div>
 
               {status.submitted && (
@@ -429,86 +455,103 @@ export default function Contact() {
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Name field */}
-                <div className={`relative transition-all duration-500 delay-[150ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                <div className={`relative transition-all duration-500 delay-[180ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
                   <input
                     id="contact-name"
                     type="text"
                     name="name"
                     placeholder=" "
                     required
-                    className="block w-full pl-11 pr-5 pt-7 pb-2 bg-zinc-950/40 border border-zinc-800 hover:border-orange-500/25 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_12px_rgba(251,146,60,0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-300 peer"
+                    style={{
+                      height: '58px',
+                      borderColor: 'rgba(251, 146, 60, 0.18)'
+                    }}
+                    className="block w-full pl-11 pr-5 pt-6 pb-1.5 bg-zinc-950/40 border hover:border-orange-500/35 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_10px_rgba(251,146,60,0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-250 peer"
                   />
-                  <FaUser className="absolute left-4 top-[24px] text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-300 text-sm" />
+                  <FaUser className="absolute left-4 top-[22px] text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-250 text-sm" />
                   <label
                     htmlFor="contact-name"
-                    className="absolute left-11 top-[20px] text-sm text-zinc-500 pointer-events-none transition-all duration-300 origin-left peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-[#FB923C] peer-[:not(:placeholder-shown)]:left-4 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FB923C]"
+                    className="absolute left-11 top-[18px] text-sm text-zinc-500 pointer-events-none transition-all duration-250 origin-left peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-[#FB923C] peer-[:not(:placeholder-shown)]:left-4 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FB923C]"
                   >
                     Name
                   </label>
                 </div>
 
                 {/* Email field */}
-                <div className={`relative transition-all duration-500 delay-[200ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                <div className={`relative transition-all duration-500 delay-[240ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
                   <input
                     id="contact-email"
                     type="email"
                     name="email"
                     placeholder=" "
                     required
-                    className="block w-full pl-11 pr-5 pt-7 pb-2 bg-zinc-950/40 border border-zinc-800 hover:border-orange-500/25 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_12px_rgba(251,146,60,0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-300 peer"
+                    style={{
+                      height: '58px',
+                      borderColor: 'rgba(251, 146, 60, 0.18)'
+                    }}
+                    className="block w-full pl-11 pr-5 pt-6 pb-1.5 bg-zinc-950/40 border hover:border-orange-500/35 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_10px_rgba(251, 146, 60, 0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-250 peer"
                   />
-                  <FaEnvelope className="absolute left-4 top-[24px] text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-300 text-sm" />
+                  <FaEnvelope className="absolute left-4 top-[22px] text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-250 text-sm" />
                   <label
                     htmlFor="contact-email"
-                    className="absolute left-11 top-[20px] text-sm text-zinc-500 pointer-events-none transition-all duration-300 origin-left peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-[#FB923C] peer-[:not(:placeholder-shown)]:left-4 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FB923C]"
+                    className="absolute left-11 top-[18px] text-sm text-zinc-500 pointer-events-none transition-all duration-250 origin-left peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-[#FB923C] peer-[:not(:placeholder-shown)]:left-4 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FB923C]"
                   >
                     Email Address
                   </label>
                 </div>
 
                 {/* Subject field */}
-                <div className={`relative transition-all duration-500 delay-[250ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                <div className={`relative transition-all duration-500 delay-[300ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
                   <input
                     id="contact-subject"
                     type="text"
                     name="subject"
                     placeholder=" "
                     required
-                    className="block w-full pl-11 pr-5 pt-7 pb-2 bg-zinc-950/40 border border-zinc-800 hover:border-orange-500/25 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_12px_rgba(251,146,60,0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-300 peer"
+                    style={{
+                      height: '58px',
+                      borderColor: 'rgba(251, 146, 60, 0.18)'
+                    }}
+                    className="block w-full pl-11 pr-5 pt-6 pb-1.5 bg-zinc-950/40 border hover:border-orange-500/35 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_10px_rgba(251, 146, 60, 0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-250 peer"
                   />
-                  <FaEdit className="absolute left-4 top-[24px] text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-300 text-sm" />
+                  <FaEdit className="absolute left-4 top-[22px] text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-250 text-sm" />
                   <label
                     htmlFor="contact-subject"
-                    className="absolute left-11 top-[20px] text-sm text-zinc-500 pointer-events-none transition-all duration-300 origin-left peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-[#FB923C] peer-[:not(:placeholder-shown)]:left-4 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FB923C]"
+                    className="absolute left-11 top-[18px] text-sm text-zinc-500 pointer-events-none transition-all duration-250 origin-left peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-[#FB923C] peer-[:not(:placeholder-shown)]:left-4 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FB923C]"
                   >
                     Subject
                   </label>
                 </div>
 
                 {/* Message field */}
-                <div className={`relative transition-all duration-500 delay-[300ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                <div className={`relative transition-all duration-500 delay-[360ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
                   <textarea
                     id="contact-message"
                     name="message"
                     placeholder=" "
                     required
-                    className="block w-full pl-11 pr-5 pt-7 pb-2 min-h-[130px] max-h-[220px] resize-y bg-zinc-950/40 border border-zinc-800 hover:border-orange-500/25 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_12px_rgba(251,146,60,0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-300 peer"
+                    style={{
+                      minHeight: '130px',
+                      maxHeight: '220px',
+                      borderColor: 'rgba(251, 146, 60, 0.18)'
+                    }}
+                    className="block w-full pl-11 pr-5 pt-6 pb-1.5 resize-y bg-zinc-950/40 border hover:border-orange-500/35 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_10px_rgba(251,146,60,0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-250 peer"
                   />
-                  <FaCommentAlt className="absolute left-4 top-5 text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-300 text-sm" />
+                  <FaCommentAlt className="absolute left-4 top-4 text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-250 text-sm" />
                   <label
                     htmlFor="contact-message"
-                    className="absolute left-11 top-[16px] text-sm text-zinc-500 pointer-events-none transition-all duration-300 origin-left peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-[#FB923C] peer-[:not(:placeholder-shown)]:left-4 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FB923C]"
+                    className="absolute left-11 top-[16px] text-sm text-zinc-500 pointer-events-none transition-all duration-250 origin-left peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-4 peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-[#FB923C] peer-[:not(:placeholder-shown)]:left-4 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FB923C]"
                   >
                     Message Details
                   </label>
                 </div>
 
                 {/* Submit button */}
-                <div className={`pt-2 transition-all duration-500 delay-[350ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                <div className={`pt-2 transition-all duration-500 delay-[420ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
                   <button
                     type="submit"
                     disabled={status.submitting}
-                    className="w-full sm:w-[200px] h-12 mx-auto rounded-full bg-gradient-to-r from-[#FB923C] to-[#FDBA74] text-white font-semibold tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-[0_8px_20px_rgba(251,146,60,0.25)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2 cursor-pointer"
+                    className="w-full sm:w-[220px] h-12 mx-auto rounded-full bg-gradient-to-r from-[#FDBA74] to-[#FB923C] text-white font-semibold tracking-wide transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.015] hover:shadow-[0_6px_22px_rgba(251,146,60,0.35)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2 cursor-pointer group"
                   >
                     {status.submitting ? (
                       <>
@@ -521,7 +564,7 @@ export default function Contact() {
                     ) : (
                       <>
                         <span>Send Message</span>
-                        <FaPaperPlane className="text-xs" />
+                        <FaPaperPlane className="text-xs transition-transform duration-300 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]" />
                       </>
                     )}
                   </button>
