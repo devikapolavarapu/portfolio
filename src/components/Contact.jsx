@@ -88,6 +88,68 @@ export default function Contact() {
         .animate-float-icon-slow {
           animation: float-icon-2 5s ease-in-out infinite;
         }
+        .cloud-btn {
+          position: relative;
+          width: 235px;
+          height: 52px;
+          background-color: #FB923C;
+          border: none;
+          border-radius: 9999px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 8px 25px rgba(251, 146, 60, 0.25);
+          margin-top: 20px;
+        }
+        .cloud-btn::before {
+          content: "";
+          position: absolute;
+          width: 70px;
+          height: 70px;
+          background-color: #FB923C;
+          border-radius: 50%;
+          top: -28px;
+          left: 32px;
+          z-index: 1;
+          transition: background-color 0.3s ease;
+        }
+        .cloud-btn::after {
+          content: "";
+          position: absolute;
+          width: 80px;
+          height: 80px;
+          background-color: #FB923C;
+          border-radius: 50%;
+          top: -32px;
+          right: 38px;
+          z-index: 1;
+          transition: background-color 0.3s ease;
+        }
+        .cloud-btn:hover {
+          background-color: #F97316;
+          transform: scale(1.03);
+          box-shadow: 0 12px 35px rgba(249, 115, 22, 0.45);
+        }
+        .cloud-btn:hover::before,
+        .cloud-btn:hover::after {
+          background-color: #F97316;
+        }
+        .cloud-btn:active {
+          transform: scale(0.97);
+        }
+        .cloud-text {
+          position: relative;
+          z-index: 10;
+          color: white;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 0.025em;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
       `}} />
 
       <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white">
@@ -257,38 +319,13 @@ export default function Contact() {
             
             <button
               onClick={() => setShowForm(true)}
-              style={{
-                backgroundColor: '#FB923C',
-                color: '#fff',
-                borderColor: 'rgba(251, 146, 60, 0.3)',
-                padding: '10px 20px',
-                borderRadius: '9999px',
-                borderWidth: '1px',
-                boxShadow: 'none',
-                marginTop: '20px'
-              }}
-              className="
-                inline-flex min-w-[150px] justify-center
-                items-center
-                gap-2
-                text-sm
-                font-semibold
-                tracking-wide
-                cursor-pointer
-                transition-all
-                duration-300
-                shadow-[0_8px_20px_rgba(251,146,60,0.2)]
-                hover:!bg-[#F97316]
-                hover:border-[#F97316]/50
-                hover:-translate-y-1
-                active:scale-95
-                hover:scale-105
-                hover:shadow-[0_0_40px_rgba(249,115,22,0.35)]
-                group
-              "
+              aria-label="Send a Message"
+              className="cloud-btn group"
             >
-              <span>Send a Message</span>
-              <span className="group-hover:translate-x-1.5 transition-transform duration-300">&rarr;</span>
+              <span className="cloud-text">
+                <span>Send a Message</span>
+                <span className="group-hover:translate-x-1.5 transition-transform duration-300">&rarr;</span>
+              </span>
             </button>
           </div>
 
