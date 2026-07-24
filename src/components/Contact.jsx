@@ -88,10 +88,18 @@ export default function Contact() {
         .animate-float-icon-slow {
           animation: float-icon-2 5s ease-in-out infinite;
         }
+        .cloud-btn-wrapper {
+          padding-top: 35px;
+          margin-top: 26px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+        }
         .cloud-btn {
           position: relative;
           width: 235px;
-          height: 52px;
+          height: 48px;
           background-color: #FB923C;
           border: none;
           border-radius: 9999px;
@@ -101,16 +109,15 @@ export default function Contact() {
           cursor: pointer;
           transition: all 0.3s ease;
           box-shadow: 0 8px 25px rgba(251, 146, 60, 0.25);
-          margin-top: 20px;
         }
         .cloud-btn::before {
           content: "";
           position: absolute;
-          width: 70px;
-          height: 70px;
+          width: 65px;
+          height: 65px;
           background-color: #FB923C;
           border-radius: 50%;
-          top: -28px;
+          top: -26px;
           left: 32px;
           z-index: 1;
           transition: background-color 0.3s ease;
@@ -118,11 +125,11 @@ export default function Contact() {
         .cloud-btn::after {
           content: "";
           position: absolute;
-          width: 80px;
-          height: 80px;
+          width: 76px;
+          height: 76px;
           background-color: #FB923C;
           border-radius: 50%;
-          top: -32px;
+          top: -30px;
           right: 38px;
           z-index: 1;
           transition: background-color 0.3s ease;
@@ -317,16 +324,18 @@ export default function Contact() {
               Have a question, opportunity, or project in mind? Drop a message here and it will be delivered straight to my email.
             </p>
             
-            <button
-              onClick={() => setShowForm(true)}
-              aria-label="Send a Message"
-              className="cloud-btn group"
-            >
-              <span className="cloud-text">
-                <span>Send a Message</span>
-                <span className="group-hover:translate-x-1.5 transition-transform duration-300">&rarr;</span>
-              </span>
-            </button>
+            <div className="cloud-btn-wrapper">
+              <button
+                onClick={() => setShowForm(true)}
+                aria-label="Send a Message"
+                className="cloud-btn group"
+              >
+                <span className="cloud-text">
+                  <span>Send a Message</span>
+                  <span className="group-hover:translate-x-1.5 transition-transform duration-300">&rarr;</span>
+                </span>
+              </button>
+            </div>
           </div>
 
           {/* Card 2: Contact Form (Active State) */}
