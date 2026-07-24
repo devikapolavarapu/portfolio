@@ -88,75 +88,6 @@ export default function Contact() {
         .animate-float-icon-slow {
           animation: float-icon-2 5s ease-in-out infinite;
         }
-        .cloud-btn-wrapper {
-          padding-top: 35px;
-          margin-top: 26px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-        }
-        .cloud-btn {
-          position: relative;
-          width: 235px;
-          height: 48px;
-          background-color: #FB923C;
-          border: none;
-          border-radius: 9999px;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 8px 25px rgba(251, 146, 60, 0.25);
-        }
-        .cloud-btn::before {
-          content: "";
-          position: absolute;
-          width: 65px;
-          height: 65px;
-          background-color: #FB923C;
-          border-radius: 50%;
-          top: -26px;
-          left: 32px;
-          z-index: 1;
-          transition: background-color 0.3s ease;
-        }
-        .cloud-btn::after {
-          content: "";
-          position: absolute;
-          width: 76px;
-          height: 76px;
-          background-color: #FB923C;
-          border-radius: 50%;
-          top: -30px;
-          right: 38px;
-          z-index: 1;
-          transition: background-color 0.3s ease;
-        }
-        .cloud-btn:hover {
-          background-color: #F97316;
-          transform: scale(1.03);
-          box-shadow: 0 12px 35px rgba(249, 115, 22, 0.45);
-        }
-        .cloud-btn:hover::before,
-        .cloud-btn:hover::after {
-          background-color: #F97316;
-        }
-        .cloud-btn:active {
-          transform: scale(0.97);
-        }
-        .cloud-text {
-          position: relative;
-          z-index: 10;
-          color: white;
-          font-size: 14px;
-          font-weight: 600;
-          letter-spacing: 0.025em;
-          display: flex;
-          align-items: center;
-          gap: 8px;
-        }
       `}} />
 
       <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white">
@@ -324,18 +255,45 @@ export default function Contact() {
               Have a question, opportunity, or project in mind? Drop a message here and it will be delivered straight to my email.
             </p>
             
-            <div className="cloud-btn-wrapper">
-              <button
-                onClick={() => setShowForm(true)}
-                aria-label="Send a Message"
-                className="cloud-btn group"
+            <button
+              onClick={() => setShowForm(true)}
+              aria-label="Send a Message"
+              style={{
+                background: 'transparent',
+                border: 'none',
+                padding: 0,
+                cursor: 'pointer',
+                outline: 'none',
+                marginTop: '14px',
+                width: '240px',
+                height: '110px',
+                position: 'relative',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+              className="group hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
+            >
+              {/* SVG Cloud Shape */}
+              <svg
+                viewBox="10 10 180 80"
+                className="absolute inset-0 w-full h-full filter drop-shadow-[0_8px_20px_rgba(251,146,60,0.25)] group-hover:drop-shadow-[0_12px_35px_rgba(249,115,22,0.45)] transition-all duration-300"
               >
-                <span className="cloud-text">
-                  <span>Send a Message</span>
-                  <span className="group-hover:translate-x-1.5 transition-transform duration-300">&rarr;</span>
-                </span>
-              </button>
-            </div>
+                <path
+                  d="M 50 76 C 35 76, 20 68, 25 52 C 15 40, 35 32, 45 38 C 50 28, 70 24, 80 34 C 90 16, 120 16, 130 36 C 140 28, 155 32, 160 40 C 168 36, 180 40, 182 50 C 192 54, 192 66, 180 70 C 170 75, 158 74, 150 68 C 140 76, 120 78, 108 74 C 98 78, 78 78, 68 72 Z"
+                  className="fill-[#FB923C] group-hover:fill-[#F97316] transition-colors duration-300"
+                />
+              </svg>
+
+              {/* Text Layer */}
+              <span
+                style={{ transform: 'translateY(-5px)' }}
+                className="relative z-10 text-white text-sm font-semibold tracking-wide flex items-center gap-2 select-none"
+              >
+                <span>Send a Message</span>
+                <span className="group-hover:translate-x-1.5 transition-transform duration-300">&rarr;</span>
+              </span>
+            </button>
           </div>
 
           {/* Card 2: Contact Form (Active State) */}
