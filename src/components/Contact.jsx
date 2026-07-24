@@ -599,7 +599,7 @@ export default function Contact() {
       >
         {/* Large Image Container with Neon Frame */}
         <div
-          className={`relative max-w-[90vw] md:max-w-[480px] w-full max-h-[88vh] ${
+          className={`relative max-w-[90vw] md:max-w-[430px] w-full max-h-[80vh] ${
             isModalOpen 
               ? "animate-royal-open" 
               : hasOpened 
@@ -643,7 +643,7 @@ export default function Contact() {
           <img
             src="/profile.jpg"
             alt="Devika Polavarapu Expanded Profile"
-            className="w-full h-auto max-h-[86vh] object-contain block rounded-2xl"
+            className="w-full h-auto max-h-[78vh] object-contain block rounded-2xl"
             style={{ display: 'block' }}
           />
         </div>
