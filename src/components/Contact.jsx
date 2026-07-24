@@ -98,16 +98,16 @@ export default function Contact() {
         {/* Left Column (45% on large screens) */}
         <div className="w-full lg:w-[45%] flex flex-col items-center justify-center text-center lg:-translate-y-4">
           {/* Profile & Floating Icons Container */}
-          <div className="relative w-72 h-72 md:w-80 md:h-80 mx-auto flex items-center justify-center select-none">
+          <div className="relative w-80 h-80 md:w-96 md:h-96 mx-auto flex items-center justify-center select-none">
             
             {/* Dashed Connecting Lines SVG */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
-              <line x1="50" y1="50" x2="16" y2="20" stroke="rgba(245,158,11,0.22)" strokeWidth="1" strokeDasharray="3 3" />
-              <line x1="50" y1="50" x2="84" y2="20" stroke="rgba(245,158,11,0.22)" strokeWidth="1" strokeDasharray="3 3" />
-              <line x1="50" y1="50" x2="10" y2="50" stroke="rgba(245,158,11,0.22)" strokeWidth="1" strokeDasharray="3 3" />
-              <line x1="50" y1="50" x2="90" y2="50" stroke="rgba(245,158,11,0.22)" strokeWidth="1" strokeDasharray="3 3" />
-              <line x1="50" y1="50" x2="16" y2="80" stroke="rgba(245,158,11,0.22)" strokeWidth="1" strokeDasharray="3 3" />
-              <line x1="50" y1="50" x2="84" y2="80" stroke="rgba(245,158,11,0.22)" strokeWidth="1" strokeDasharray="3 3" />
+              <line x1="50" y1="50" x2="10" y2="12" stroke="rgba(245,158,11,0.22)" strokeWidth="1" strokeDasharray="3 3" />
+              <line x1="50" y1="50" x2="90" y2="12" stroke="rgba(245,158,11,0.22)" strokeWidth="1" strokeDasharray="3 3" />
+              <line x1="50" y1="50" x2="0" y2="50" stroke="rgba(245,158,11,0.22)" strokeWidth="1" strokeDasharray="3 3" />
+              <line x1="50" y1="50" x2="100" y2="50" stroke="rgba(245,158,11,0.22)" strokeWidth="1" strokeDasharray="3 3" />
+              <line x1="50" y1="50" x2="10" y2="88" stroke="rgba(245,158,11,0.22)" strokeWidth="1" strokeDasharray="3 3" />
+              <line x1="50" y1="50" x2="90" y2="88" stroke="rgba(245,158,11,0.22)" strokeWidth="1" strokeDasharray="3 3" />
             </svg>
 
             {/* Profile Photo (Center attraction) */}
@@ -136,14 +136,14 @@ export default function Contact() {
             </div>
 
             {/* Sparkles around photo */}
-            <div className="absolute top-[28%] left-[24%] text-amber-400 animate-pulse text-lg">&#x2728;</div>
-            <div className="absolute bottom-[28%] right-[24%] text-amber-400 animate-pulse text-lg delay-700">&#x2728;</div>
+            <div className="absolute top-[20%] left-[18%] text-amber-400 animate-pulse text-lg">&#x2728;</div>
+            <div className="absolute bottom-[20%] right-[18%] text-amber-400 animate-pulse text-lg delay-700">&#x2728;</div>
 
             {/* Floating Clickable Icons */}
             {/* Phone */}
             <a
               href="tel:+918500156156"
-              className="absolute top-[12%] left-[8%] z-20 flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border border-amber-500/40 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:scale-110 hover:-translate-y-1 hover:text-white transition-all duration-300 animate-float-icon group"
+              className="absolute top-[4%] left-[2%] z-20 flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border border-amber-500/40 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:scale-110 hover:-translate-y-1 hover:text-white transition-all duration-300 animate-float-icon group"
             >
               <FaPhone className="text-base" />
               <span className="opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-zinc-950 text-white text-xs rounded px-2.5 py-1.5 absolute -top-10 left-1/2 -translate-x-1/2 pointer-events-none whitespace-nowrap border border-zinc-800 shadow-xl">
@@ -154,7 +154,7 @@ export default function Contact() {
             {/* Email */}
             <a
               href="mailto:puppy567567@gmail.com"
-              className="absolute top-[12%] right-[8%] z-20 flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border border-amber-500/40 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:scale-110 hover:-translate-y-1 hover:text-white transition-all duration-300 animate-float-icon-slow group"
+              className="absolute top-[4%] right-[2%] z-20 flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border border-amber-500/40 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:scale-110 hover:-translate-y-1 hover:text-white transition-all duration-300 animate-float-icon-slow group"
             >
               <FaEnvelope className="text-base" />
               <span className="opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-zinc-950 text-white text-xs rounded px-2.5 py-1.5 absolute -top-10 left-1/2 -translate-x-1/2 pointer-events-none whitespace-nowrap border border-zinc-800 shadow-xl">
@@ -167,7 +167,7 @@ export default function Contact() {
               href="https://github.com/devikapolavarapu"
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute top-[44%] left-[-2%] z-20 flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border border-amber-500/40 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:scale-110 hover:-translate-y-1 hover:text-white transition-all duration-300 animate-float-icon group"
+              className="absolute top-[44%] left-[-8%] z-20 flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border border-amber-500/40 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:scale-110 hover:-translate-y-1 hover:text-white transition-all duration-300 animate-float-icon group"
             >
               <FaGithub className="text-base" />
               <span className="opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-zinc-950 text-white text-xs rounded px-2.5 py-1.5 absolute -top-10 left-1/2 -translate-x-1/2 pointer-events-none whitespace-nowrap border border-zinc-800 shadow-xl">
@@ -180,7 +180,7 @@ export default function Contact() {
               href="https://linkedin.com/in/devika-polavarapu"
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute top-[44%] right-[-2%] z-20 flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border border-amber-500/40 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:scale-110 hover:-translate-y-1 hover:text-white transition-all duration-300 animate-float-icon-slow group"
+              className="absolute top-[44%] right-[-8%] z-20 flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border border-amber-500/40 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:scale-110 hover:-translate-y-1 hover:text-white transition-all duration-300 animate-float-icon-slow group"
             >
               <FaLinkedin className="text-base" />
               <span className="opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-zinc-950 text-white text-xs rounded px-2.5 py-1.5 absolute -top-10 left-1/2 -translate-x-1/2 pointer-events-none whitespace-nowrap border border-zinc-800 shadow-xl">
@@ -193,7 +193,7 @@ export default function Contact() {
               href="https://discord.com/users/1110434267462385685"
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute bottom-[12%] left-[8%] z-20 flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border border-amber-500/40 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:scale-110 hover:-translate-y-1 hover:text-white transition-all duration-300 animate-float-icon group"
+              className="absolute bottom-[4%] left-[2%] z-20 flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border border-amber-500/40 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:scale-110 hover:-translate-y-1 hover:text-white transition-all duration-300 animate-float-icon group"
             >
               <FaDiscord className="text-base" />
               <span className="opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-zinc-950 text-white text-xs rounded px-2.5 py-1.5 absolute -top-10 left-1/2 -translate-x-1/2 pointer-events-none whitespace-nowrap border border-zinc-800 shadow-xl">
@@ -206,7 +206,7 @@ export default function Contact() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute bottom-[12%] right-[8%] z-20 flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border border-amber-500/40 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:scale-110 hover:-translate-y-1 hover:text-white transition-all duration-300 animate-float-icon-slow group"
+              className="absolute bottom-[4%] right-[2%] z-20 flex items-center justify-center w-12 h-12 rounded-full bg-zinc-900 border border-amber-500/40 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:scale-110 hover:-translate-y-1 hover:text-white transition-all duration-300 animate-float-icon-slow group"
             >
               <FaFileAlt className="text-base" />
               <span className="opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-zinc-950 text-white text-xs rounded px-2.5 py-1.5 absolute -top-10 left-1/2 -translate-x-1/2 pointer-events-none whitespace-nowrap border border-zinc-800 shadow-xl">
@@ -242,7 +242,7 @@ export default function Contact() {
           >
             <div
               style={{ marginBottom: '24px' }}
-              className="max-w-[200px] md:max-w-[280px] p-1 bg-gradient-to-r from-amber-500/20 to-orange-400/20 rounded-2xl border border-amber-500/20 shadow-2xl"
+              className="max-w-[170px] md:max-w-[230px] p-1 bg-gradient-to-r from-amber-500/20 to-orange-400/20 rounded-2xl border border-amber-500/20 shadow-2xl"
             >
               <img
                 src="/illustration.jpg"
