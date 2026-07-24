@@ -391,7 +391,7 @@ export default function Contact() {
           >
             {/* Form Container Panel */}
             <div 
-              className="relative p-6 md:p-8 bg-[#0b0618]/70 border border-orange-500/20 rounded-3xl shadow-[0_0_30px_rgba(251,146,60,0.06),inset_0_1px_1px_rgba(251,146,60,0.08)] backdrop-blur-xl overflow-hidden"
+              className="relative p-5 md:p-7 bg-[#0b0618]/70 border border-orange-500/20 rounded-3xl shadow-[0_0_30px_rgba(251,146,60,0.06),inset_0_1px_1px_rgba(251,146,60,0.08)] backdrop-blur-xl overflow-hidden"
             >
               {/* Sparkles decoration inside form */}
               <div className="absolute top-4 right-4 text-orange-500/25 text-sm">&#x2728;</div>
@@ -410,7 +410,7 @@ export default function Contact() {
               </svg>
 
               {/* Back Button */}
-              <div className={`transition-all duration-500 delay-[60ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+              <div className={`mb-[15px] transition-all duration-500 delay-[60ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
                 <button
                   type="button"
                   onClick={() => setShowForm(false)}
@@ -435,9 +435,9 @@ export default function Contact() {
               </div>
 
               {/* Compact Header */}
-              <div className={`mt-4 mb-5 transition-all duration-500 delay-[120ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
-                <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">Send me a message</h3>
-                <p className="text-xs md:text-sm text-zinc-400 mt-1.5">Let's connect — I'd love to hear from you.</p>
+              <div className={`transition-all duration-500 delay-[120ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                <h3 className="text-xl md:text-2xl font-bold text-white leading-tight mb-[6px]">Send me a message</h3>
+                <p className="text-xs md:text-sm text-zinc-400 mb-[19px]">Let's connect — I'd love to hear from you.</p>
               </div>
 
               {status.submitted && (
@@ -489,7 +489,7 @@ export default function Contact() {
                       height: '58px',
                       borderColor: 'rgba(251, 146, 60, 0.18)'
                     }}
-                    className="block w-full pl-11 pr-5 pt-6 pb-1.5 bg-zinc-950/40 border hover:border-orange-500/35 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_10px_rgba(251, 146, 60, 0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-250 peer"
+                    className="block w-full pl-11 pr-5 pt-6 pb-1.5 bg-zinc-950/40 border hover:border-orange-500/35 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_10px_rgba(251,146,60,0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-250 peer"
                   />
                   <FaEnvelope className="absolute left-4 top-[22px] text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-250 text-sm" />
                   <label
@@ -512,7 +512,7 @@ export default function Contact() {
                       height: '58px',
                       borderColor: 'rgba(251, 146, 60, 0.18)'
                     }}
-                    className="block w-full pl-11 pr-5 pt-6 pb-1.5 bg-zinc-950/40 border hover:border-orange-500/35 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_10px_rgba(251, 146, 60, 0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-250 peer"
+                    className="block w-full pl-11 pr-5 pt-6 pb-1.5 bg-zinc-950/40 border hover:border-orange-500/35 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_10px_rgba(251,146,60,0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-250 peer"
                   />
                   <FaEdit className="absolute left-4 top-[22px] text-zinc-500 peer-focus:text-[#FB923C] transition-colors duration-250 text-sm" />
                   <label
@@ -531,8 +531,8 @@ export default function Contact() {
                     placeholder=" "
                     required
                     style={{
-                      minHeight: '130px',
-                      maxHeight: '220px',
+                      minHeight: '115px',
+                      maxHeight: '200px',
                       borderColor: 'rgba(251, 146, 60, 0.18)'
                     }}
                     className="block w-full pl-11 pr-5 pt-6 pb-1.5 resize-y bg-zinc-950/40 border hover:border-orange-500/35 focus:border-[#FB923C] focus:bg-zinc-900/40 focus:shadow-[0_0_10px_rgba(251,146,60,0.12)] rounded-[14px] text-white placeholder-transparent focus:outline-none transition-all duration-250 peer"
@@ -547,11 +547,11 @@ export default function Contact() {
                 </div>
 
                 {/* Submit button */}
-                <div className={`pt-2 transition-all duration-500 delay-[420ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
+                <div style={{ paddingTop: '3px' }} className={`transition-all duration-500 delay-[420ms] ${showForm ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"}`}>
                   <button
                     type="submit"
                     disabled={status.submitting}
-                    className="w-full sm:w-[220px] h-12 mx-auto rounded-full bg-gradient-to-r from-[#FDBA74] to-[#FB923C] text-white font-semibold tracking-wide transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.015] hover:shadow-[0_6px_22px_rgba(251,146,60,0.35)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2 cursor-pointer group"
+                    className="w-full sm:w-[220px] h-12 ml-0 rounded-full bg-gradient-to-r from-[#FDBA74] to-[#FB923C] text-white font-semibold tracking-wide transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.015] hover:shadow-[0_6px_22px_rgba(251,146,60,0.35)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2 cursor-pointer group"
                   >
                     {status.submitting ? (
                       <>
