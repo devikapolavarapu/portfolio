@@ -240,7 +240,10 @@ export default function Contact() {
                 : "opacity-0 translate-y-[-30px] scale-95 pointer-events-none absolute"
             }`}
           >
-            <div className="max-w-[200px] md:max-w-[280px] mb-12 p-1 bg-gradient-to-r from-amber-500/20 to-orange-400/20 rounded-2xl border border-amber-500/20 shadow-2xl">
+            <div
+              style={{ marginBottom: '24px' }}
+              className="max-w-[200px] md:max-w-[280px] p-1 bg-gradient-to-r from-amber-500/20 to-orange-400/20 rounded-2xl border border-amber-500/20 shadow-2xl"
+            >
               <img
                 src="/illustration.jpg"
                 alt="Contact Illustration"
@@ -248,20 +251,21 @@ export default function Contact() {
               />
             </div>
             <h3 className="text-2xl font-bold text-white mb-3">Want to send me a message?</h3>
-            <p className="text-zinc-400 text-sm max-w-sm leading-relaxed mb-12">
+            <p className="text-zinc-400 text-sm max-w-sm leading-relaxed mb-0">
               Have a question, opportunity, or project in mind? Drop a message here and it will be delivered straight to my email.
             </p>
             
             <button
               onClick={() => setShowForm(true)}
               style={{
-                backgroundColor: '#FDBA74',
+                backgroundColor: '#FB923C',
                 color: '#fff',
-                borderColor: 'rgba(253, 186, 116, 0.3)',
+                borderColor: 'rgba(251, 146, 60, 0.3)',
                 padding: '10px 20px',
                 borderRadius: '9999px',
                 borderWidth: '1px',
-                boxShadow: 'none'
+                boxShadow: 'none',
+                marginTop: '20px'
               }}
               className="
                 inline-flex min-w-[150px] justify-center
@@ -273,13 +277,13 @@ export default function Contact() {
                 cursor-pointer
                 transition-all
                 duration-300
-                shadow-[0_8px_20px_rgba(253,186,116,0.2)]
-                hover:!bg-[#FB923C]
-                hover:border-[#FB923C]/50
+                shadow-[0_8px_20px_rgba(251,146,60,0.2)]
+                hover:!bg-[#F97316]
+                hover:border-[#F97316]/50
                 hover:-translate-y-1
                 active:scale-95
                 hover:scale-105
-                hover:shadow-[0_0_40px_rgba(251,146,60,0.35)]
+                hover:shadow-[0_0_40px_rgba(249,115,22,0.35)]
                 group
               "
             >
