@@ -25,43 +25,6 @@ export default function Experience() {
       tech: ["Git", "GitHub", "Open Source", "AI Agents"]
     },
     {
-      company: "EduSkills Academy",
-      role: "DevOps & Cloud Automation Intern",
-      period: "Apr 2026 – Jun 2026",
-      badge: "Internship",
-      location: "Remote",
-      bullets: [
-        "Completed an 8-week virtual internship focused on cloud-native engineering.",
-        "Worked with Docker and GitHub Actions.",
-        "Learned Infrastructure as Code, CI/CD pipelines and cloud automation fundamentals."
-      ],
-      tech: ["Docker", "GitHub Actions", "DevOps"]
-    },
-    {
-      company: "upSkill Campus",
-      role: "Data Science & Machine Learning Intern",
-      period: "Mar 2026 – May 2026",
-      badge: "Internship",
-      location: "Remote",
-      bullets: [
-        "Completed Data Science and Machine Learning virtual internship."
-      ],
-      tech: ["Data Science", "Machine Learning", "Python"]
-    },
-    {
-      company: "EduSkills Foundation",
-      role: "Java Full Stack Intern",
-      period: "Dec 2025 – Mar 2026",
-      badge: "Internship",
-      location: "Remote",
-      bullets: [
-        "Built full-stack applications using Java and Spring Boot.",
-        "Developed REST APIs and integrated frontend with backend.",
-        "Worked with MySQL and backend application development."
-      ],
-      tech: ["Java", "Spring Boot", "REST APIs", "MySQL"]
-    },
-    {
       company: "McKinsey & Company",
       role: "McKinsey Forward Program Participant",
       period: "Sep 2025 – Dec 2025",
@@ -74,19 +37,6 @@ export default function Experience() {
     },
     {
       company: "Infosys Springboard",
-      role: "Python Full Stack Intern",
-      period: "Sep 2025 – Nov 2025",
-      badge: "Internship",
-      location: "Remote",
-      bullets: [
-        "Built backend modules using Python and SQL.",
-        "Developed REST APIs and integrated structured database operations.",
-        "Tested and debugged application modules to improve reliability."
-      ],
-      tech: ["Python", "SQL", "REST APIs"]
-    },
-    {
-      company: "Infosys Springboard",
       role: "Infosys Springboard – Pragati: Path to Future Cohort 6 Participant",
       period: "Jul 2025 – Nov 2025",
       badge: "Program",
@@ -94,71 +44,6 @@ export default function Experience() {
         "Participated in the Pragati: Path to Future Cohort 6 program."
       ],
       tech: ["Python", "Full Stack"]
-    },
-    {
-      company: "Vodafone",
-      role: "Data Analyst Intern",
-      period: "Sep 2025 – Oct 2025",
-      badge: "Internship",
-      location: "Remote",
-      bullets: [
-        "Performed exploratory data analysis using Python and SQL.",
-        "Built dashboards and analytical reports.",
-        "Worked with data preprocessing and visualization."
-      ],
-      tech: ["Python", "Pandas", "NumPy", "SQL", "Data Analytics"]
-    },
-    {
-      company: "VRS ACM SIGSPATIAL",
-      role: "VRS ACM SIGSPATIAL Chairperson",
-      period: "May 2025 – Aug 2026",
-      badge: "Leadership",
-      bullets: [
-        "Led and coordinated student activities, technical initiatives and team-based events related to ACM SIGSPATIAL."
-      ],
-      tech: ["Leadership", "ACM SIGSPATIAL"]
-    },
-    {
-      company: "VRS ACM-W",
-      role: "Member",
-      period: "May 2025 – Aug 2026",
-      badge: "Member",
-      bullets: [
-        "Active member of VRS ACM-W chapter."
-      ],
-      tech: ["ACM-W"]
-    },
-    {
-      company: "VRSEC ACM Student Chapter",
-      role: "Member",
-      period: "May 2025 – Aug 2026",
-      badge: "Member",
-      bullets: [
-        "Member of VRSEC ACM Student Chapter."
-      ],
-      tech: ["ACM"]
-    },
-    {
-      company: "National Service Scheme (NSS)",
-      role: "NSS Report Writer",
-      period: "Aug 2024 – Present",
-      badge: "Full-time",
-      location: "Vijayawada, Andhra Pradesh, India · On-site",
-      bullets: [
-        "Contribute to NSS documentation and reporting of community service and campus activities."
-      ],
-      tech: ["Documentation", "Community Service", "Reporting"]
-    },
-    {
-      company: "Velagapudi Ramakrishna Siddhartha Engineering College",
-      role: "Student",
-      period: "Sep 2023 – Present",
-      badge: "Student",
-      location: "Vijayawada, Andhra Pradesh, India",
-      bullets: [
-        "Information Technology student involved in NSS activities and VRS ACM SIGSPATIAL leadership on campus."
-      ],
-      tech: ["Information Technology", "Academics"]
     }
   ]
 
@@ -168,7 +53,7 @@ export default function Experience() {
       className="reveal py-24 px-6"
     >
       <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white">
-        Experience
+        Trainings & Open Source
       </h2>
 
       <div className="w-full max-w-5xl mx-auto space-y-8">
