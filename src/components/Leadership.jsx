@@ -1,45 +1,37 @@
 export default function Leadership() {
   const cards = [
     {
-      organization: "VRS ACM SIGSPATIAL",
-      role: "Chairperson",
-      period: "May 2025 – Aug 2026",
-      badge: "Leadership",
+      organization: "Cohere Labs",
+      role: "ML Summer School Participant",
+      period: "Jul 2026 – Aug 2026",
+      badge: "Apprenticeship",
+      location: "Remote",
       bullets: [
-        "Led and coordinated student activities and technical initiatives related to ACM SIGSPATIAL."
+        "Participated in Cohere Labs ML Summer School."
       ],
-      tech: ["Leadership", "ACM SIGSPATIAL"]
+      tech: ["Machine Learning", "AI"]
     },
     {
-      organization: "VRS ACM-W",
-      role: "Member",
-      period: "May 2025 – Aug 2026",
-      badge: "Member",
+      organization: "GirlScript Summer of Code",
+      role: "Open Source, AI Agents Contributor",
+      period: "May 2026 – Aug 2026",
+      badge: "Internship",
+      location: "Remote",
       bullets: [
-        "Active member of VRS ACM-W chapter."
+        "Contributed to open-source projects with a focus on AI agents.",
+        "Collaborated with mentors and contributors using Git and GitHub."
       ],
-      tech: ["ACM-W", "Community"]
+      tech: ["Git", "GitHub", "Open Source", "AI Agents"]
     },
     {
-      organization: "VRSEC ACM Student Chapter",
-      role: "Member",
-      period: "May 2025 – Aug 2026",
-      badge: "Member",
+      organization: "Infosys Springboard – Pragati",
+      role: "Infosys Springboard – Pragati: Path to Future Cohort 6 Participant",
+      period: "Jul 2025 – Nov 2025",
+      badge: "Program",
       bullets: [
-        "Member of VRSEC ACM Student Chapter."
+        "Participated in the Pragati: Path to Future Cohort 6 program."
       ],
-      tech: ["ACM", "Student Chapter"]
-    },
-    {
-      organization: "National Service Scheme (NSS)",
-      role: "NSS Report Writer & Volunteer",
-      period: "Aug 2024 – Present",
-      badge: "Full-time",
-      location: "Vijayawada, Andhra Pradesh, India · On-site",
-      bullets: [
-        "Contribute to NSS documentation and reporting of community service and campus activities."
-      ],
-      tech: ["Documentation", "Community Service", "Reporting"]
+      tech: ["Python", "Full Stack"]
     }
   ]
 
@@ -49,7 +41,7 @@ export default function Leadership() {
       className="reveal py-24 px-6"
     >
       <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white">
-        Co-Curricular & Extra-Curricular Activities
+        Training & Open Source
       </h2>
 
       <div className="w-full max-w-5xl mx-auto space-y-8">

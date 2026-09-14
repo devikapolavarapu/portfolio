@@ -2,48 +2,67 @@ export default function Experience() {
 
   const experiences = [
     {
-      company: "Cohere Labs",
-      role: "ML Summer School Participant",
-      period: "Jul 2026 – Aug 2026",
-      badge: "Apprenticeship",
-      location: "Remote",
-      bullets: [
-        "Participated in Cohere Labs ML Summer School."
-      ],
-      tech: ["Machine Learning", "AI"]
-    },
-    {
-      company: "GirlScript Summer of Code",
-      role: "Open Source, AI Agents Contributor",
-      period: "May 2026 – Aug 2026",
+      company: "EduSkills Academy",
+      role: "DevOps & Cloud Automation Intern",
+      period: "Apr 2026 – Jun 2026",
       badge: "Internship",
       location: "Remote",
       bullets: [
-        "Contributed to open-source projects with a focus on AI agents.",
-        "Collaborated with mentors and contributors using Git and GitHub."
+        "Completed an 8-week virtual internship focused on cloud-native engineering.",
+        "Worked with Docker and GitHub Actions.",
+        "Learned Infrastructure as Code, CI/CD pipelines and cloud automation fundamentals."
       ],
-      tech: ["Git", "GitHub", "Open Source", "AI Agents"]
+      tech: ["Docker", "GitHub Actions", "DevOps"]
     },
     {
-      company: "McKinsey & Company",
-      role: "McKinsey Forward Program Participant",
-      period: "Sep 2025 – Dec 2025",
-      badge: "Program",
+      company: "upSkill Campus",
+      role: "Data Science & Machine Learning Intern",
+      period: "Mar 2026 – May 2026",
+      badge: "Internship",
       location: "Remote",
       bullets: [
-        "Participated in McKinsey's Forward Program focused on practical, leadership and digital skills."
+        "Completed Data Science and Machine Learning virtual internship."
       ],
-      tech: ["Leadership", "Digital Skills", "Problem Solving"]
+      tech: ["Data Science", "Machine Learning", "Python"]
+    },
+    {
+      company: "EduSkills Foundation",
+      role: "Java Full Stack Intern",
+      period: "Dec 2025 – Mar 2026",
+      badge: "Internship",
+      location: "Remote",
+      bullets: [
+        "Built full-stack applications using Java and Spring Boot.",
+        "Developed REST APIs and integrated frontend with backend.",
+        "Worked with MySQL and backend application development."
+      ],
+      tech: ["Java", "Spring Boot", "REST APIs", "MySQL"]
     },
     {
       company: "Infosys Springboard",
-      role: "Infosys Springboard – Pragati: Path to Future Cohort 6 Participant",
-      period: "Jul 2025 – Nov 2025",
-      badge: "Program",
+      role: "Python Full Stack Intern",
+      period: "Sep 2025 – Nov 2025",
+      badge: "Internship",
+      location: "Remote",
       bullets: [
-        "Participated in the Pragati: Path to Future Cohort 6 program."
+        "Built backend modules using Python and SQL.",
+        "Developed REST APIs and integrated structured database operations.",
+        "Tested and debugged application modules to improve reliability."
       ],
-      tech: ["Python", "Full Stack"]
+      tech: ["Python", "SQL", "REST APIs"]
+    },
+    {
+      company: "Vodafone",
+      role: "Data Analyst Intern",
+      period: "Sep 2025 – Oct 2025",
+      badge: "Internship",
+      location: "Remote",
+      bullets: [
+        "Performed exploratory data analysis using Python and SQL.",
+        "Built dashboards and analytical reports.",
+        "Worked with data preprocessing and visualization."
+      ],
+      tech: ["Python", "Pandas", "NumPy", "SQL", "Data Analytics"]
     }
   ]
 
@@ -53,7 +72,7 @@ export default function Experience() {
       className="reveal py-24 px-6"
     >
       <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white">
-        Trainings & Open Source
+        Experience
       </h2>
 
       <div className="w-full max-w-5xl mx-auto space-y-8">
