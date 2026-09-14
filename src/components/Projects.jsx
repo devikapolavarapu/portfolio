@@ -38,6 +38,15 @@ export default function Projects() {
       demo: null,
       status: "Completed",
       featured: false
+    },
+    {
+      title: "ShopWise AI",
+      desc: "Real-time commerce intelligence platform that uses AI, inventory analytics, payment intelligence and OCR to help merchants make actionable business decisions.",
+      tech: ["React", "FastAPI", "Python", "Llama AI", "OCR"],
+      github: "https://github.com/devikapolavarapu/ShopWise-AI",
+      demo: null,
+      status: "Completed",
+      featured: false
     }
   ]
 
