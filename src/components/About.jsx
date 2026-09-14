@@ -1,7 +1,7 @@
 export default function About() {
   const stats = [
     {
-      value: "8+",
+      value: "5+",
       label: "Projects",
       link: "https://drive.google.com/drive/folders/1pnAFkjCDJIe2ZdvAP3BHxJMcMy0Szlxg?usp=sharing"
     },
