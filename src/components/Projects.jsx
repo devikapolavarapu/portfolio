@@ -13,7 +13,7 @@ export default function Projects() {
       featured: true
     },
     {
-      title: "Identifying Vulnerable Vector-Prone Areas through Remote Sensing",
+      title: "Geospatial Identification of Vulnerable Vector-Prone Areas in Krishna District",
       desc: "A Remote Sensing and GIS-based spatial framework utilizing Landsat-8 satellite imagery to identify mosquito vector breeding zones in Krishna District, India. Integrates NDVI, NDWI, NDMI, and Land Surface Temperature (LST) indices to perform spatial risk analysis and zonation.",
       tech: ["Remote Sensing", "GIS", "Landsat-8", "QGIS", "Spatial Analysis"],
       github: "https://github.com/devikapolavarapu/Identifying-Vulnerable-Vector-Prone-Areas-through-Remote-Sensing-Krishna-Dt-Andhra-Pradesh-India",
