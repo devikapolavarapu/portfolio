@@ -16,38 +16,40 @@ export default function Navbar() {
   ]
 
   useEffect(() => {
+    let ticking = false
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const sy = window.scrollY
+          const isScrolled = sy > 20
+          setScrolled(prev => (prev !== isScrolled ? isScrolled : prev))
 
-  useEffect(() => {
-    const handleIntersection = () => {
-      const scrollPosition = window.scrollY + 250 // Offset for active zonation
-      
-      // If we are at the top, activate home
-      if (window.scrollY < 100) {
-        setActiveSection("home")
-        return
-      }
-
-      for (const item of navItems) {
-        const el = document.getElementById(item.id)
-        if (el) {
-          const top = el.offsetTop
-          const height = el.offsetHeight
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(item.id)
-            break
+          if (sy < 100) {
+            setActiveSection(prev => (prev !== "home" ? "home" : prev))
+          } else {
+            const scrollPosition = sy + 250
+            for (const item of navItems) {
+              const el = document.getElementById(item.id)
+              if (el) {
+                const top = el.offsetTop
+                const height = el.offsetHeight
+                if (scrollPosition >= top && scrollPosition < top + height) {
+                  setActiveSection(prev => (prev !== item.id ? item.id : prev))
+                  break
+                }
+              }
+            }
           }
-        }
+          ticking = false
+        })
+        ticking = true
       }
     }
-    window.addEventListener("scroll", handleIntersection)
-    handleIntersection() // Run once on mount
-    return () => window.removeEventListener("scroll", handleIntersection)
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   // Close menu on Esc key press
@@ -57,7 +59,7 @@ export default function Navbar() {
         setIsOpen(false)
       }
     }
-    window.addEventListener("keydown", handleKeyDown)
+    window.addEventListener("keydown", handleKeyDown, { passive: true })
     return () => window.removeEventListener("keydown", handleKeyDown)
   }, [])
 

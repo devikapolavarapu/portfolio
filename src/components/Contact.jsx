@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { FaEnvelope, FaGithub, FaLinkedin, FaDiscord, FaFileAlt, FaPhone, FaUser, FaEdit, FaCommentAlt, FaPaperPlane, FaArrowLeft } from "react-icons/fa"
+import profileImg from "../assets/profile.jpg"
 
 export default function Contact() {
   const [showForm, setShowForm] = useState(false)
@@ -162,7 +163,7 @@ export default function Contact() {
                   className="cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 outline-none focus:ring-2 focus:ring-amber-500/50"
                 >
                   <img
-                    src="/profile.jpg"
+                    src={profileImg}
                     alt="Devika Polavarapu"
                     className="w-36 h-36 md:w-44 md:h-44 object-cover rounded-full ring-2 ring-amber-400/20"
                     style={{ objectPosition: 'center 18%' }}
@@ -626,7 +627,7 @@ export default function Contact() {
 
           {/* Opened image */}
           <img
-            src="/profile.jpg"
+            src={profileImg}
             alt="Devika Polavarapu Expanded Profile"
             className="w-full h-auto max-h-[78vh] object-contain block rounded-2xl"
             style={{ display: 'block' }}
